@@ -608,6 +608,7 @@
     <Content Include="log.txt" />
     <Content Include="test.html" />
     <Content Include="test\allmain.html" />
+    <Content Include="test\handan.html" />
     <Content Include="test\HtmlPage.html" />
     <Content Include="test\news.html" />
     <Content Include="test\news.jpg" />

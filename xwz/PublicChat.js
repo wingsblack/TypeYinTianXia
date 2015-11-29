@@ -18,7 +18,8 @@ var xwz;
                 avatar: avatar,
                 nickName: body.messageFrom.nickName,
                 message: message.message,
-                messageType: body.eventType
+                messageType: body.eventType,
+                handan: message
             };
             xwz.Chat.appendMessage(msg);
         };

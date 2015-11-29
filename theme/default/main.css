@@ -654,10 +654,47 @@ img {
     max-width: 838px;
 }
 
+.shishizbbox .sszbcon .sszbconlist li .ahandan {
+   background:#9adcfc;
+   width:300px;
+   min-height:100px;    
+}
+
+
+
 .shishizbbox .sszbcon .sszbconlist li .atext img {
     height: auto;
     width: auto;
     margin: auto;
+}
+
+.shishizbbox .ask-span {
+    background: #DC3037;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: block;
+    border-radius: 2px;
+    float: left;
+    text-indent: 0px;
+    margin-right:10px;
+}
+
+
+
+.shishizbbox .handan-detail a,.shishizbbox .handan-news-detail a {
+    background: #DC3037;
+    color: #fff;
+    padding: 5px 10px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 2px;
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+    text-indent: 0;
 }
 
 .shishizbbox .sszbcon .sszbconlist li .namebox.teacher {

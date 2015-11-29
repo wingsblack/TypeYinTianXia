@@ -9,6 +9,8 @@
 
         onMessage(frame) {
             var body = eval("(" + frame.body + ")");
+
+            
             var time = Util.toTime(body.createTime);
             var avatar = body.messageFrom.avatar;
             if (body.eventType == "NEWS") return;
@@ -19,7 +21,8 @@
                 avatar: avatar,
                 nickName: body.messageFrom.nickName,
                 message: message.message,
-                messageType:body.eventType
+                messageType: body.eventType,
+                handan: message
             }
 
             Chat.appendMessage(msg);

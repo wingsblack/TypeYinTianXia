@@ -35,6 +35,21 @@
             return '/public/user/' + this.COMPANY_ID
         } 
 
+        //喊单详情
+        static get HANDAN_DETAIL() {
+            return this.API_HOST + '/handan/detail';
+        } 
+        static get HANDAN_QUICK() {
+            return this.API_HOST + '/handan/quick';
+        }
+
+
+        //新闻详情
+        static get NEWS_DETAIL() {
+            return this.API_HOST + '/home/tradeDetail/'
+        }
+
+
         //聊天历史
         static get API_CHAT_HISTORY() {
             return this.API_HOST + '/chat/history';

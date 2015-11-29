@@ -39,6 +39,29 @@ var xwz;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(Project, "HANDAN_DETAIL", {
+            //喊单详情
+            get: function () {
+                return this.API_HOST + '/handan/detail';
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Project, "HANDAN_QUICK", {
+            get: function () {
+                return this.API_HOST + '/handan/quick';
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Project, "NEWS_DETAIL", {
+            //新闻详情
+            get: function () {
+                return this.API_HOST + '/home/tradeDetail/';
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(Project, "API_CHAT_HISTORY", {
             //聊天历史
             get: function () {

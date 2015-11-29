@@ -183,12 +183,12 @@
             });
 
 
-            menus.push({
-                text: "用户标记",
-                click: function () {
+            //menus.push({
+            //    text: "用户标记",
+            //    click: function () {
 
-                }
-            });
+            //    }
+            //});
 
 
             menus.push({
@@ -199,12 +199,12 @@
             });
 
 
-            menus.push({
-                text: "取消标记",
-                click: function () {
+            //menus.push({
+            //    text: "取消标记",
+            //    click: function () {
 
-                }
-            });
+            //    }
+            //});
 
 
             menus.push({
@@ -287,13 +287,89 @@
                 return false;
             });
 
+
+            //登陆住切换
+            $("#show_quick_register_btn").click(function () {
+                $("#user-login-wrap1").hide();
+                $("#user-regitster-wrap-step1").show();
+                $("#register-alert-error").hide();
+            });
+            $("#show_quick_login_btn").click(function () {
+                $("#user-login-wrap1").show();
+                $("#user-regitster-wrap-step1").hide();
+                $("#register-alert-error").hide();
+            });
+
+            //快速注册第一步
+            $("#new-login-btn").click(function () {
+                var username = $("#new-register-form").find(".username_input").val();
+                //console.log(username);
+                if (username.length < 6 || username.length > 30) {
+                    $("#new-register-form").find("#register-alert-error").find("span").html("用户名长度在6-30位之间");
+                    $("#new-register-form").find("#register-alert-error").show();
+                    return false;
+                }
+                var reg = /\w+/;
+                if (!reg.test(username)) {
+                    $("#new-register-form").find("#register-alert-error").find("span").html("用户名只能是数字和英文的组合");
+                    $("#new-register-form").find("#register-alert-error").show();
+                    return false;
+                }
+                var nickname = $("#new-register-form").find(".nickname_input").val();
+                if (nickname == "") {
+                    $("#new-register-form").find("#register-alert-error").find("span").html("请填写昵称");
+                    $("#new-register-form").find("#register-alert-error").show();
+                    return false;
+                }
+                var pwd = $("#new-register-form").find(".pwd_input").val();
+                if (pwd == "") {
+                    $("#new-register-form").find("#register-alert-error").find("span").html("请填写密码");
+                    $("#new-register-form").find("#register-alert-error").show();
+                    return false;
+                }
+                var repwd = $("#new-register-form").find(".repwd_input").val();
+                if (pwd != repwd) {
+                    $("#new-register-form").find("#register-alert-error").find("span").html("两次输入的密码不一致");
+                    $("#new-register-form").find("#register-alert-error").show();
+                    return false;
+                }
+                //login=a12341&password=123123&nickName=haohao
+
+                var newregisterform = $("#new-register-form");
+                newregisterform.find("#register-alert-error").hide();
+                newregisterform.find(".username_input").val('');
+                newregisterform.find(".nickname_input").val('')
+                newregisterform.find('.pwd_input').val('')
+                newregisterform.find('.repwd_input').val('')
+
+
+                $.ajax({
+                    url: Project.API_HOST +  '/account/register',
+                    data: 'login=' + username + '&nickName=' + nickname + '&password=' + pwd,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.code == 0) {
+                            _this.data = data.data;
+                            dialog.close();
+                            _this._onLogin(data.data);
+                        } else {
+                            $("#new-register-form").find("#register-alert-error").find("span").html(data.message);
+                            $("#new-register-form").find("#register-alert-error").show();
+                        }
+                    }
+                });
+
+            })
+
             //退出登陆
             $("#btn_logout").click(function () {
 
                 $.ajax({
                     url: Project.API_HOST + '/account/logout',
                     success: function (data) {
-                        _this._onLogout();
+                        location.reload();
+                        //_this._onLogout();
                     }
                 });
             })
@@ -541,6 +617,24 @@
 
 
                 return false;
+            });
+
+
+
+            $(document).on('click', '.ask a', function () {
+                art.dialog({
+                    title: '提交问题',
+                    content: document.getElementById('demoCode_content_DOM2'),
+                    id: 'EF893L2',
+                    okVal: '提交问题',
+                    ok: function () {
+                        alert('问题已经提交');
+                    }
+                });
+            });
+
+            $(document).on('click', '.handan-btn', function () {
+                Util.dialog(Project.HANDAN_QUICK, 1000, 200, "发布喊单", 'handan_fabu');
             });
         }
 
