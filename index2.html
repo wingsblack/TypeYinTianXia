@@ -1,0 +1,677 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title></title>
+   
+    <link href="assets/css/zui.css" rel="stylesheet" />
+    <link href="theme/old/style.css" rel="stylesheet" />
+    
+    <link href="theme/css/reset.css" rel="stylesheet" />
+
+    <link href="theme/default/main.css" rel="stylesheet" />
+    <link href="js/plugin/artdialog/skins/default.css" rel="stylesheet" />
+    
+
+   
+
+    <script type="text/javascript" src="js/plugin/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            alert(11)
+        })
+    </script>
+   
+
+</head>
+<body>
+    <div class="zbbodybg"></div>
+    <div class="lay-topbar">
+        <div class="zblogo"><a href="#"><img height="50" src="theme/images/logo.png" alt="玄微子"></a></div>
+        <div id="zbzhuce" class="zbzhuce" style="display:block" ><a class="topzhuce">会员注册登陆</a></div>
+        <div id="login-info" class="login-info"  style="display:none">
+            <div class="person_control_wrap">
+                <div class="thumb"><img class="data-avatar" ></div>
+                <div class="person_control">
+                    <span  style="color:#fff;"></span>
+                    <div class="person_info_box disN" style="height: auto; display: none;">
+                        <div>昵称：</div>
+                        <div class="func_wrap">
+                            <div class="thumb"><img class="data-avatar" ></div>
+                            <div class="func_btn">
+                                <div><a id="bind_mobile">手机绑定</a></div>
+                                <div><a id="update_persondata">个人资料</a></div>
+                                <div><a id="repassword_link">修改密码</a></div>
+                                <div><a href="/gm/extends/myExtends">推广情况</a></div>
+
+                            </div>
+                        </div>
+                        <p class="logout-wrap">
+                            <i><img class="logout-icon" src="assets/image/img/logout.jpg" width="30" height="30"></i><a href="/account/logout">退出登录</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightqqbox">
+            <div class="zhuliname"><span>点击咨询</span></div>
+            <a onclick="ga('send','event','直播室','顶部：咨询客服1');" href="sumit.html" target="_blank"><img src="theme/images/topqqbtn.gif"></a>
+            <a onclick="ga('send','event','直播室','顶部：咨询客服2');" href="sumit.html" target="_blank"><img src="theme/images/topqqbtn.gif"></a>
+            <a onclick="ga('send','event','直播室','顶部：咨询客服3');" href="sumit.html" target="_blank"><img src="theme/images/topqqbtn.gif"></a>
+            <a onclick="ga('send','event','直播室','顶部：咨询客服4');" href="sumit.html" target="_blank"><img src="theme/images/topqqbtn.gif"></a>
+            <a onclick="ga('send','event','直播室','顶部：咨询客服5');" href="sumit.html" target="_blank"><img src="theme/images/topqqbtn.gif"></a>
+
+        </div>
+    </div>
+    <div class="lay-sidebar">
+        <ul>
+            <li class="li-bgtext"><a href="/home/saveLink" target="_blank"><i class="lefticon01"></i>保存到桌面<i class="jyhot"></i></a></li>
+            <li><a id="soft-download"><i class="lefticon02"></i>软件下载<i class="jyhot"></i></a></li>
+            <li class="dailybtn"><a id="cjrl"><i class="lefticon03"></i>财经日历</a></li>
+            <li class="kechengbtn"><a href="http://xwzchina.com/list.asp?pid=5" target="_blank"><i class="lefticon04"></i>课程安排</a></li>
+            <li><a id="kaihu"><i class="lefticon05"></i>在线开户</a></li>
+            <li><a href="sumit.html" target="_blank"><i class="lefticon06"></i>帮助</a></li>
+            <li class="wapbtn">
+                <a href="javascript:void(0)"><i class="lefticon07"></i>手机直播室</a>
+                <div class="openerweima">
+
+                    进入手机直播室<i class="sanjiao"></i>
+                </div>
+            </li>
+            <li class="wapbtn">
+                <a onclick="ga('send','event','直播室','左侧栏：二维码');">
+                    <img src="theme/images/yintianxia88.jpg" width="75" height="75">关注玄微子
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="lay-main">
+        <div class="zbleftside" style="display: block;">
+            <div class="hangqingbox">
+                <div class="hqtitle">实时行情</div>
+                <div class="hqboxcon" id="hq"><div class="zhongleilist greenlist">
+                    <div class="zhonglei clearFix">
+                        <div class="name">石油</div>
+                        <div class="nowprice">现价2178.7</div>
+                    </div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tbody><tr><td width="40%">涨跌幅</td>
+                        <td width="20%">&nbsp;</td>
+                        <td width="40%"><img src="theme/images/zhangdieicon01.png">-1.44%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                <div class="zhongleilist redlist last">
+                    <div class="zhonglei clearFix">
+                        <div class="name">现货白银</div>
+                        <div class="nowprice">现价3007</div>
+                    </div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+                        <td width="40%">涨跌幅</td>
+                        <td width="20%">&nbsp;</td>
+                        <td width="40%"><img src="theme/images/zhangdieicon02.png">-1.67%</td>
+                        </tr></tbody></table>
+                    </div>
+                </div>
+            </div>
+            <div class="onlinebox">
+                <div class="oltitle clearFix">
+                    <h2>在线人数</h2>
+                </div>
+
+                <div class="onlinecon">
+                    <div class="onlineconlist bd">
+                            <ul class="ollist"  id="onlist">
+                                
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zbbicontent">
+            <div class="zbbigmiddle">
+                <div class="shishizbbox">
+                    <div class="sszbtitle">
+                        <h2>实时直播</h2>
+                        <div class="paomadeng">
+                            <marquee direction="left" id="notice" scrollamount="3">
+                                <a href="sumit.html" target="_blank">欢迎来到银天下直播室，VIP专家团队实时策略已公布，详询QQ助理~~</a>
+                            </marquee>
+                        </div>
+                        <div class="sszbcon">
+                            <div class="sszbconlist">
+                                <ul class="clearFix" id="panel"></ul>
+                            </div>
+                            <div class="editor-bar" id="editor-bar">
+                                <div class="robot-chat-wrap" style="margin:5px 0 0 5px;">
+                                    <div class="robot-list">
+                                        <div class="SimulationSelect" id="SimulationSelect">
+                                            <span class="SimulationText" value="" selectIndex="0">请选择</span>
+                                            <div class="SimulationOptions">
+
+                                                <a value="4028911849970e79014997108a7b0000">玄微子</a>
+
+                                                <a value="4028911849970e7901499710b8fb0001">白银</a>
+
+                                                <a value="4028911849970e7901499710df2b0002">海交</a>
+
+                                                <a value="4028911849970e7901499711070a0003">虚拟用户7</a>
+
+                                                <a value="4028911849970e79014997112c860004">虚拟用户8</a>
+
+                                                <a value="4028911849970e7901499711c3500005">机器人5</a>
+
+                                                <a value="4028911849970e7901499711e2d10006">机器人6</a>
+
+                                                <a value="4028911849970e790149971206320007">机器人7</a>
+
+                                                <a value="4028911849970e79014997122cce0008">机器人8</a>
+
+                                                <a value="4028911849970e790149971282b90009">机器人9</a>
+
+                                                <a value="40289a814993d0d7014993ed3d1b0001">机器人4</a>
+
+                                                <a value="40289a814994ac57014994c155b70002">路人甲</a>
+
+                                                <a value="40289a814994ac57014994c196270003">路人乙</a>
+
+                                                <a value="40289a814994ac57014994c1e7590004">路人丙</a>
+
+                                                <a value="40289a814994ac57014994c215c70005">路人丁</a>
+
+                                                <a value="40289a814994ac57014994c2bcc20006">虚拟用户1</a>
+
+                                                <a value="40289a814994ac57014994c2f7c00007">虚拟用户2</a>
+
+                                                <a value="40289a814994ac57014994c33e370008">虚拟用户3</a>
+
+                                                <a value="54ccfd6bbb514a1f8d6fb681385a8626">机器人3</a>
+
+                                                <a value="9429333b20b94f2e9c8e7ec3a3fcaf5b">机器人1</a>
+
+                                                <a value="ea3af0f04d622a71014d8a007dbb0006">Robert</a>
+
+                                                <a class="selected" value="">请选择</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="select-robot-chat">
+                                        <input type="checkbox" name="robot-chat">
+                                    </div>
+                                </div>
+                                <div class="handan-btn" style="width:45px;height:30px;">
+                                    <a style="text-index:-99999">发布喊单</a>
+                                </div>
+                                <div class="ask" style="width:45px;height:30px;">
+                                    <a></a>
+                                </div>
+                            </div>
+                            <div class="ytx-fayan disabled" id="ytx-fayan">
+                                <div class="ytx-loading" id="ytx-loading">
+                                    <div class="mask"></div>
+                                    <div class="img">
+                                        <img src="theme/default/images/loadng.gif" /> 聊天服务器连接中...
+                                    </div>
+                                    
+                                </div>
+                                <div class="ytx-fayan-toolbar  clearfix" id="ytx-fayan-toolbar">
+                                    <a class="toolbar-icon toolbar-icon-face">表情</a>
+                                    <a data-msg="[@good][@good][@good][@good][@good]">赞一个</a>
+                                    <a data-msg="[@鲜花][@鲜花][@鲜花][@鲜花][@鲜花]">送花</a>
+                                    <a>投资宝典</a>
+                                    
+                                    <div class="ask">
+                                        <a href="###"></a>
+                                    </div>
+                                </div>
+                                <div class="ytx-fayan-box">
+                                    <div class="ytx-input-box">
+                                        <textarea id="ytx-input" disabled="disabled" class="ytx-input">请登陆后在发言</textarea>
+                                    </div>
+                                    <div class="ytx-btn ytx-btn-fayan " id="send_msg_btn">
+                                        发言
+                                    </div>
+                                </div>
+                                <!--表情框-->
+                                <div class="ytx-popface" id="ytx-popface">
+                                    <div class="ytx-popface-title">
+
+                                    </div>
+                                    <div id="ytxPopfaceBoxList"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zbbigright">
+                <div class="video">
+                   
+                        <!--<embed quality="high" width="100%" height="100%" align="middle" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" type="application/x-shockwave-flash">-->
+                   
+                    <div class="video_bottom_adv">
+                        <div class="slide txtMarquee-left">
+                            <div class="bd">
+                                <marquee behavior="scroll" direction="left" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                                    <ul class="infoList">
+                                        <li>白银正在直播中。。。。。。</li>
+                                    </ul>
+                                </marquee>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="guangbo">
+                    <div class="ytx-guangbo-bg"></div>
+                    <div class="ytx-guangbo" id="ytx-guangbo">
+                        <div class="ytx-guangbo-title">
+                            <span class="current">石油介绍<i></i></span>
+                            <span>玄微子</span>
+                            <span>盈利Top10</span>
+                            <span>乾坤线适用</span>
+                        </div>
+                        <div class="ytx-guangbo-context" style="display:block;">
+                            测试内容1
+                        </div>
+                        <div class="ytx-guangbo-context">
+                            测试内容2
+                        </div>
+                        <div class="ytx-guangbo-context">
+                            测试内容3
+                        </div>
+                        <div class="ytx-guangbo-context">
+                            测试内容4
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--右键菜单-->
+    <ul class="dropdown-menu dropdown-context" id="dropdown" style="top: 508px; left: 285px; display: none;" data-selector="4028911849970e79014997122cce0008">
+        <li><a >发信息</a></li>
+        <li><a  class="kickuser">永久踢出</a></li>
+        <li><a  class="biaojiyonghu">用户标记</a></li>
+        <li><a  class="userlevel">用户等级</a></li>
+        <li><a  class="cancelbiaoji">取消标记</a></li>
+        <li><a  class="biaojimenyou">设置梦游</a></li>
+    </ul>
+    <!--登陆注册框-->
+    <div id="user_login_fincebox" style="display:none;">
+        <div id="user-regitster-wrap-step1" style="display:none">
+            <div class="fince-title">
+                <h2>用户注册</h2>
+            </div>
+            <div>
+                <form class="form-horizontal" id="new-register-form" role="form" method="post" onsubmit="return false;">
+                    <div id="register-alert-error" style="display:none;">
+                        <span>用户名错误</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            <span class="icon-username icon"></span>
+                            <input type="text" name="username" class="username_input new_reg_input" placeholder="用户名" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            <span class="icon-nickname icon"></span>
+                            <input type="text" name="nickname" class="nickname_input new_reg_input" placeholder="昵称" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            <span class="icon-pwd2 icon"></span>
+                            <input type="password" name="passwpord" class="pwd_input new_reg_input" placeholder="密码" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            <span class="icon-pwd3 icon"></span>
+                            <input type="password" name="repassword" class="repwd_input new_reg_input" placeholder="确认密码" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            <input id="new-login-btn" style="cursor:pointer" type="submit" class="register-submit btn btn-primary" value="快速注册" data-loading="稍候...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="user-login-wrap1" style="display:block;">
+            <div class="fince-title">
+                <h2>用户登陆</h2>
+            </div>
+            <div id="loginform">
+                <form method="post" action="/account/ajaxLogin" id="login_form">
+                    <div id="login-alert-error">
+                    </div>
+                    <div class="inbox-wrap">
+                        <i class="icon-name"></i>
+                        <div>
+                            <input type="text" name="login" id="name" class="inbox brd1" placeholder="用户名/手机" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="inbox-wrap2">
+                        <i class="icon-pwd"></i>
+                        <input type="password" name="password" id="password" class="inbox brd1" maxlength="18" placeholder="密码">
+                    </div>
+                    <!-- <div class="forget-pwd"><a href="javascript:void(0);" id="find-pwd">忘记密码?</a></div> -->
+                    <div class="log-setting" style="display:none;">
+                        <input type="checkbox" id="remember" name="rememberMe" value="1">
+                        <label for="remember">记住我</label>
+                        &nbsp;&nbsp;
+                        <input type="checkbox" id="autolog" name="autolog" value="2" style="display: none;">
+                        <label for="autolog" style="display: none;">下次自动登录</label><br>
+                    </div>
+                    <div class="sub-wrap">
+                        <div class="login-button-wrap">
+                            <div id="forget-pwd-wrap"><a href="###" id="forget-pwd-btn">忘记密码?</a></div>
+                            <span class="submit-wrap">
+                                <input type="submit" value="登录" class="button-red brd1" id="btn-login">
+
+
+                                <a href="/account/visitorLogin" class="yuke-login">游客登录</a>
+
+
+                            </span>
+                        </div>
+                    </div>
+                    <div id="register-sug">还没有帐户？<a href="###" id="show_quick_register_btn">30s快速注册</a> 享受更多优惠 </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="register-model" class="user-login-wrap2" style="display:none;">
+            <div class="fince-title">
+                <h2>用户注册<!--  |</h2> <span>已有账户,<a href="###" id="show_quick_login_btn">快速登录</a> --></h2>
+            </div>
+            <form class="form-horizontal" role="form" method="post" id="mobile-register-form" onsubmit="return false;">
+                <div id="register-alert-error" style="display:none;">
+                    <span>用户名错误</span>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5" id="register_mobile_wrap">
+                        <input type="text" name="mobile" id="mobile_input" placeholder="手机号" class="form-control">
+                    </div>
+                    <br>
+                    <div class="v-error col-md-5 ">错了</div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3" id="register-captcha-wrap">
+                        <input type="text" name="captcha" id="captcha_input" placeholder="验证码" class="form-control">
+                    </div>
+                    <div class="col-md-2" id="register-captcha-img-wrap">
+                        <!-- <img src="/account/captcha" width="115" height="26" />-->
+                    </div>
+                    <br>
+                    <div class="col-md-5 v-error">错了</div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3" id="resgiter-msg-wrap">
+                        <input type="text" name="smscode" id="register_smscode" placeholder="手机验证码" class="form-control">
+                    </div>
+                    <div class="col-md-2" id="resgiter-sendmsgbtn-wrap">
+                        <input type="button" class="getsmscode btn" id="send_code_btn" value="获取验证码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-5" id="register-save-sub">
+                        <input id="confirm-register-btn" style="cursor:pointer" type="submit" class="register-submit btn btn-primary" value="快速注册" data-loading="稍候...">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--绑定手机框-->
+    <div id="user_bind_mobile_fincebox" style="display:none;">
+        <div id="user-bind-mobile-wrap1">
+            <div class="fince-title">
+                <h2>手机绑定 </h2>
+            </div>
+            <div>
+                <form class="form-horizontal" role="form" method="post" id="mobile-bind-form" onsubmit="return false;">
+                    <div class="v-error col-md-5 alert" style="clear:both;display:none;widht:288px;">错了</div>
+                    <div style="clear:both"></div>
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            <input type="text" name="mobile" id="bind_mobile_input1" placeholder="请输入手机号码" class="form-control brd1">
+                        </div>
+                        <br />
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <input type="text" name="captcha" id="captcha_mobiel_bind_input" placeholder="请输入验证码" class="form-control brd1">
+                        </div>
+                        <div class="col-md-2">
+                            <img src="http://1818.sfbtcn.com/account/captcha" />
+                        </div>
+                        <br />
+                        <div class="col-md-5 v-error">错了</div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:5px;">
+                        <div class="col-md-3">
+                            <input type="text" name="smscode" id="bind_smscode" placeholder="获取验证码" class="form-control brd1">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" class="getsmscode btn brd1" value="获取验证码" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-5 v-error" id="verifySmsResult"></div>
+                        <div style="clear:both;margin-top:5px">
+                            <input type="submit" id="bind_mobile_btn" value="绑定手机" data-loading="稍候...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- 下载列表 -->
+    <div id="downloadlist" style="display:none;">
+        <div>
+            <div class="fince-title">
+                <h2>软件下载</h2>
+            </div>
+            <div id="downloadlist-form-wrap">
+                <ul>
+                    <li class="file_info">
+                        <div class="file_name">
+                            <p class="fname">winrarx64-521scp.exe</p>
+                            <p class="fsize">大小: 2000kb  创建时间: 2015-11-01 18:51:23.0</p>
+                        </div>
+                        <div class="file_down_link">
+                            <a href="http://shximages.b0.upaiyun.com/1818/download/567e4540-b070-45de-9d8c-bbe02e31479c.exe">下载</a>
+                        </div>
+                    </li>
+
+
+                    <li class="file_info">
+                        <div class="file_name">
+                            <p class="fname">ma.apk</p>
+                            <p class="fsize">大小: 7292kb  创建时间: 2015-11-01 18:52:33.0</p>
+                        </div>
+                        <div class="file_down_link">
+                            <a href="http://shximages.b0.upaiyun.com/1818/download/4d82bc47-414e-41f5-bc9e-2dbe07e85985.apk">下载</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--申请开户-->
+    <div id="kaishezhanghu" style="display:none;">
+        <div>
+            <div class="fince-title">
+                <h2>申请开户</h2>
+            </div>
+            <div id="kaishezhanghu-form-wrap">
+                <form action="/app/account/openaccount" method="post">
+                    <div id="errormsg">
+                        <p>错误提示：姓名格式错误 </p>
+                    </div>
+                    <div class="form-group gray">
+                        <label>称谓 : </label>
+                        <div>
+
+                            <select class="sex-select" name="sex">
+                                <option value="0" selected="selected">请选择</option>
+                                <option value="1">先生</option>
+                                <option value="2">女士</option>
+                            </select>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>中文姓名 : </label>
+                        <div>
+                            <input type="text" name="name" />
+                        </div>
+                    </div>
+                    <div class="form-group gray">
+                        <label>英文姓名 ( 拼音 ) : </label>
+                        <div>
+                            <input type="text" name="nameEnglish" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>身份证号码 : </label>
+                        <div>
+                            <input type="text" name="identityCard" />
+                        </div>
+
+                    </div>
+                    <div class="form-group gray">
+                        <label>身份证上传 : </label>
+                        <div id="sfz_uploader_box">
+                            <input type="button" id="selector" style="width:80px;" value="上传" /><span id="state"></span>
+                            <input type="hidden" id="identityCardUrl" name="identityCardUrl" />
+                            <!--  <div id="uploader" class="wu-example">
+                                 <div id="filePicker"></div>
+                                 <div class="queueList">
+                                     <div id="dndArea" class="placeholder">
+
+                                     </div>
+                                 </div>
+                                 <div class="statusBar" style="display:none;">
+                                     <div class="progress">
+                                         <span class="text">0%</span>
+                                         <span class="percentage"></span>
+                                     </div>
+                                 </div>
+                             </div> -->
+                        </div>
+                        <div id="sfz_suggest">
+                            只接受单一文件上传（只需要身份证正面副本）<br />
+                            身份证上传格式:jpg,jpeg<br />
+                            本公司只接受清晰的彩色图片或者复印本<br />
+                            否则申请会被延误至本公司收到合乎要求的复印本
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>出生年月 : </label>
+                        <div>
+                            <input type="text" name="birthday" />
+                        </div>
+                    </div>
+                    <div class="form-group gray">
+                        <label>通讯地址 : </label>
+                        <div>
+                            <input type="text" name="address" />
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label>手机号码 : </label>
+                        <div>
+                            <input type="text" name="mobile" />
+                        </div>
+                    </div>
+                    <div class="form-group gray">
+                        <label>邮箱 : </label>
+                        <div>
+                            <input type="text" name="email" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>账户姓名 : </label>
+                        <div>
+                            <input type="text" name="bankAccountName" />
+                        </div>
+                    </div>
+                    <div class="form-group gray">
+                        <label>银行账户 : </label>
+                        <div>
+                            <input type="text" name="bankAccountNumber" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>银行名称 : </label>
+                        <div>
+                            <input type="text" name="bankName" />
+                        </div>
+                    </div>
+                    <div class="form-group gray">
+                        <label>银行卡所属支行 : </label>
+                        <div>
+                            <input type="text" name="bankBranch" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:60px;height:40px">
+                        <input type=submit value="提交" class="sub_btn" style="margin-top:10px;">
+                        <input type="reset" value="重置" style="display:none;" id="sqzhreset" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript1">
+        //申请开户
+        $("#kaihu").click(function () {
+            art.dialog({
+                content: document.getElementById('kaishezhanghu'),
+                id: 'EF893L',
+                title: '申请开户',
+                width: 820,
+                zIndex: 1500,
+                lock: true,
+            });
+
+            //webuploader 按钮实效的bug
+            $("#filePicker .webuploader-pick").next().width(100);
+            $("#filePicker .webuploader-pick").next().height(30);
+
+
+            $("#sqzhreset").click();
+            $("#state").text("");
+            $("#kaishezhanghu input[type=submit]").val('提交');
+            $("#kaishezhanghu input[type=submit]").removeAttr('disabled');
+            $("#kaishezhanghu-form-wrap .errormsg").hide();
+        });
+
+        $(".downloadBtn").click(function () {
+            art.dialog({
+                content: document.getElementById('downloadlist'),
+                id: 'EF893L',
+                title: '软件下载',
+                width: 820,
+                zIndex: 1500,
+                lock: true
+            });
+        });
+
+    </script>
+</body>
+</html>
