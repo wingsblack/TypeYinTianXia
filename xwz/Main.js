@@ -47,5 +47,32 @@ $(function () {
         var handan_id = $(this).attr('danhao');
         xwz.Util.dialog(xwz.Project.NEWS_DETAIL + '/' + handan_id, 800, 300, "查看财经资讯", 'news_detail');
     });
+    //个人资料
+    $("#update_persondata").click(function () {
+        art.dialog({
+            content: document.getElementById('personDataFince'),
+            id: 'EF893L',
+            width: 500,
+            lock: true
+        });
+    });
+    $("#repassword_link").click(function () {
+        art.dialog({
+            content: document.getElementById('repassword-fance'),
+            id: 'EF893L',
+            width: 388,
+            height: 200,
+            lock: true
+        });
+    });
+    $("#forget-pwd-btn").click(function () {
+        $("#user-login-wrap1").parents(".aui_dialog").find(".aui_close").click();
+        art.dialog({
+            content: document.getElementById('find_pwd_findcebox'),
+            id: 'EF893L',
+            width: 527,
+            lock: true
+        });
+    });
 });
 //# sourceMappingURL=Main.js.map

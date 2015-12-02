@@ -54,6 +54,13 @@ var xwz;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(Project, "API_KICK", {
+            get: function () {
+                return this.API_HOST + "/gm/users/kick/";
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(Project, "NEWS_DETAIL", {
             //新闻详情
             get: function () {

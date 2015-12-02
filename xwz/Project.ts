@@ -43,6 +43,9 @@
             return this.API_HOST + '/handan/quick';
         }
 
+        static get API_KICK() {
+            return this.API_HOST + "/gm/users/kick/";
+        }
 
         //新闻详情
         static get NEWS_DETAIL() {

@@ -11,6 +11,7 @@
 
             this._socket = new SockJS(url);
             this._client = Stomp.over(this._socket);
+            this._client.debug = null;
             this._listen = [];
         }
 

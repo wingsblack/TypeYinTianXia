@@ -65,7 +65,7 @@ var xwz;
                     '</div>' +
                     '<div class="time">' + time + '</div></div></li>';
             }
-            $("#onlist").append($(html));
+            $("#onlist").prepend($(html));
         };
         User.getUser = function (id) {
             return userlist[id];
@@ -98,7 +98,7 @@ var xwz;
             this.id = data.id;
             this.nickName = data.nickName;
             this.avatar = data.avatar;
-            this.isBindPhone = data.isBindPhone;
+            this.isBindPhone = data.mobileBinded;
             this.roleCode = data.roleCode;
             $("#zbzhuce").hide();
             $("#login-info").show();
@@ -117,6 +117,10 @@ var xwz;
             else {
                 $("#editor-bar").hide();
                 $("#ytx-fayan .ask").show();
+                $("#login-info .func_btn > div:eq(3)").hide();
+            }
+            if (this.roleCode == "super_admin" || this.roleCode == "admin") {
+                $("#login-info .func_btn > div:eq(4)").show();
             }
             this.setMenu();
             this.RegisteredPrivateChat();
@@ -136,6 +140,18 @@ var xwz;
         User.prototype.setMenu = function () {
             var _this;
             var menus = [];
+            xwz.dropdown.setGlobalShow(function (li, menu) {
+                menu.dataUser = li.attr('data-user');
+                menu.validuser = li.attr("data-validuser");
+                if (xwz.Global.user.id == menu.dataUser)
+                    this.disable = true;
+                else if (menu.validuser == "false")
+                    this.disable = true;
+                else if (!xwz.Global.user.isAdmin)
+                    this.disable = true;
+                else
+                    this.disable = false;
+            });
             menus.push({
                 text: "发信息",
                 click: function (li, menu) {
@@ -148,7 +164,21 @@ var xwz;
             });
             menus.push({
                 text: "永久踢出",
-                click: function () {
+                click: function (li) {
+                    var uid = li.attr("data-user");
+                    $.ajax({
+                        url: xwz.Project.API_KICK + uid,
+                        type: "POST",
+                        data: {
+                            uid: uid
+                        },
+                        success: function (data) {
+                        },
+                        error: function () {
+                        }
+                    });
+                },
+                onShow: function (li, menu) {
                 }
             });
             //menus.push({
@@ -158,7 +188,39 @@ var xwz;
             //});
             menus.push({
                 text: "用户等级",
-                click: function () {
+                click: function (li, menu) {
+                    var dataUser = li.attr("data-user");
+                    art.dialog({
+                        content: document.getElementById('user_lvl'),
+                        id: 'EF893L',
+                        title: '用户等级',
+                        width: 350,
+                        zIndex: 1500,
+                        lock: true,
+                        button: [
+                            {
+                                name: '确定',
+                                callback: function () {
+                                    var imgurl = $("#user_lvl_wrap input[name=userlevel]:checked").attr('imgurl');
+                                    var imgarray = imgurl.split('/');
+                                    var imgname = imgarray[imgarray.length - 1];
+                                    // /app/account/updatebyadmin
+                                    var uid = $("#user_lvl_uid").val();
+                                    $.post(xwz.Project.API_HOST + '/app/account/updatebyadmin', { uid: dataUser, identity: imgname }, function (data) {
+                                    });
+                                    //$(".col2 #" + uid).find(".usergroup").empty();
+                                    //$(".col2 #" + uid).find(".usergroup").html('<img width="19px" height="16px" src="' + imgurl + '">');
+                                    return true;
+                                },
+                                focus: true
+                            },
+                            {
+                                name: '取消'
+                            }
+                        ]
+                    });
+                },
+                onShow: function (li, menu) {
                 }
             });
             //menus.push({
@@ -185,7 +247,7 @@ var xwz;
             });
             if (!this.isAdmin) {
                 menus.length = 1;
-                menus[0]._class = "fobidtalk";
+                menus[0].disable = true;
             }
             xwz.dropdown.add(menus);
         };
@@ -521,6 +583,16 @@ var xwz;
             });
             $(document).on('click', '.handan-btn', function () {
                 xwz.Util.dialog(xwz.Project.HANDAN_QUICK, 1000, 200, "发布喊单", 'handan_fabu');
+            });
+            //审核通过
+            $(document).on('click', '.auditmsgbtn', function () {
+                var msgid = $(this).attr('msgid');
+                var self = $(this);
+                $.post(xwz.Project.API_HOST + '/chat/approve/' + msgid, function (data) {
+                    if (data.code == 0) {
+                        self.remove();
+                    }
+                }, 'json');
             });
         };
         return User;

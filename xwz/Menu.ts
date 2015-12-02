@@ -28,14 +28,19 @@
             this.elm.children().each(function () {
                 var $this = $(this);
                 var menu = _menus[$this.attr("data-id")];
+                _this.__GlobalShow.call(menu, _this.target, $(this));
                 menu.onShow && menu.onShow(_this.target, $(this));
                 var $a = $this.children("a");
                 $a.html(menu.text);
-                $a.addClass(menu._class);
+                $a.toggleClass("fobidtalk", menu.disable);
 
 
             })
             this.elm.show();
+        }
+        private static __GlobalShow: Function = xwz.EmptyFn;
+        static setGlobalShow(fn: Function) {
+            this.__GlobalShow = fn;
         }
         static elm: JQuery;
 
@@ -54,8 +59,8 @@
                 menu.user = _this.target.attr("data-user");
                 menu.sleepwalk = _this.target.attr("data-sleepwalk");
 
-
-                return menu.click(_this.target, $this);
+                if (!menu.disable)
+                    return menu.click(_this.target, $this);
             })
         }
 

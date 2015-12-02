@@ -826,9 +826,9 @@
     <Content Include="theme\old\images\btn.png" />
     <Content Include="theme\old\images\icon-pwd.png" />
     <Content Include="theme\old\images\icon-user.png" />
+    <Content Include="theme\old\images\pwdstep1.png" />
     <Content Include="theme\old\js.js" />
     <Content Include="theme\old\style.css" />
-    <Content Include="web.config" />
     <Content Include="xwz\emotion_data.js" />
     <Content Include="xwz\xwz.js" />
   </ItemGroup>
@@ -843,12 +843,7 @@
     <Content Include="assets\css\zui-theme.css.map" />
     <Content Include="assets\css\zui.css.map" />
     <Content Include="assets\css\zui.lite.css.map" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
+    <Content Include="index3.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
@@ -876,6 +871,20 @@
     <TypeScriptCompile Include="xwz\User.ts" />
     <TypeScriptCompile Include="xwz\Util.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\javaTmplate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>
@@ -892,7 +901,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49569</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49569/</IISUrl>
+          <IISUrl>http://localhost:49569</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

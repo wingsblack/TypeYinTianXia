@@ -14,8 +14,34 @@ var xwz;
                     var url = emotionsDataMap[b];
                     return '<img src="' + url + '" />';
                 });
-                if (message.messageType == "PUBLIC_CHAT")
+                if (message.messageType == "PUBLIC_CHAT") {
+                    var messageStatus = message.messageStatus;
+                    var id = message.senderId;
+                    var slefMessage = xwz.Global.user.id == id;
+                    //梦游消息
+                    if (messageStatus == "-2") {
+                        if (!(slefMessage || xwz.Global.user.isAdmin))
+                            continue;
+                    }
+                    else if (messageStatus == "1") {
+                        if (slefMessage) { }
+                        else if (!xwz.Global.user.isAdmin) {
+                            continue;
+                        }
+                        else {
+                            message.message += '<button msgid="' + message.id + '" class="auditmsgbtn">审核通过</button>';
+                        }
+                    }
+                    else if (messageStatus == "2") {
+                        if (!(slefMessage || xwz.Global.user.isAdmin))
+                            continue;
+                    }
+                    else if (messageStatus == "3") {
+                        if (slefMessage || xwz.Global.user.isAdmin)
+                            continue;
+                    }
                     html += this.getPublicHTML(message);
+                }
                 else if (message.messageType == "HANDAN") {
                     html += this.getHandanHTML(message);
                 }
@@ -80,7 +106,10 @@ var xwz;
                         nickName: message.senderName,
                         message: message.message,
                         messageType: message.messageType,
-                        handan: message.handan
+                        handan: message.handan,
+                        id: message.id,
+                        messageStatus: message.messageStatus,
+                        senderId: message.senderId
                     });
                 }
                 if (len == 0)

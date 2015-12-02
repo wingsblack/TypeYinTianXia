@@ -23,12 +23,16 @@ var xwz;
             this.elm.children().each(function () {
                 var $this = $(this);
                 var menu = _menus[$this.attr("data-id")];
+                _this.__GlobalShow.call(menu, _this.target, $(this));
                 menu.onShow && menu.onShow(_this.target, $(this));
                 var $a = $this.children("a");
                 $a.html(menu.text);
-                $a.addClass(menu._class);
+                $a.toggleClass("fobidtalk", menu.disable);
             });
             this.elm.show();
+        };
+        dropdown.setGlobalShow = function (fn) {
+            this.__GlobalShow = fn;
         };
         dropdown.init = function () {
             this.elm = $("#dropdown");
@@ -42,9 +46,11 @@ var xwz;
                 menu.validuser = _this.target.attr("data-validuser");
                 menu.user = _this.target.attr("data-user");
                 menu.sleepwalk = _this.target.attr("data-sleepwalk");
-                return menu.click(_this.target, $this);
+                if (!menu.disable)
+                    return menu.click(_this.target, $this);
             });
         };
+        dropdown.__GlobalShow = xwz.EmptyFn;
         return dropdown;
     })();
     xwz.dropdown = dropdown;
